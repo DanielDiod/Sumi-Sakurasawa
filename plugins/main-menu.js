@@ -157,7 +157,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 handler.help = ['menu']
 handler.tags = ['main']
 handler.command = ['menu', 'help', 'menú'] 
-handler.register = false 
+handler.register = true 
 export default handler
 
 const more = String.fromCharCode(8206)
