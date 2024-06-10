@@ -1,5 +1,5 @@
 let handler = async (m, { conn, usedPrefix, isOwner }) => {
-let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;おDanịel.xyz⁩;;\nFN:おDanịel.xyz⁩\nORG:おDanịel.xyz⁩\nTITLE:\nitem1.TEL;waid=5218261275256:5218261275256\nitem1.X-ABLabel:おDanịel.xyz⁩\nX-WA-BIZ-DESCRIPTION:\nX-WA-BIZ-NAME:おDanịel.xyz⁩\nEND:VCARD`
+let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Daniel 🇦🇱;;\nFN:Daniel 🇦🇱\nORG:Daniel 🇦🇱\nTITLE:\nitem1.TEL;waid=51955918117:51955918117\nitem1.X-ABLabel:Daniel 🇦🇱\nX-WA-BIZ-DESCRIPTION:\nX-WA-BIZ-NAME:Daniel 🇦🇱\nEND:VCARD`
 await conn.sendMessage(m.chat, { contacts: { displayName: 'おDanịel.xyz⁩', contacts: [{ vcard }] }}, {quoted: m})
 }
 handler.help = ['owner']
