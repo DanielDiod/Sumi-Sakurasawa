@@ -247,11 +247,11 @@ const mcode = args[0] && args[0].includes('--code') ? true : args[1] && args[1].
 
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? parentw.user.jid : m.sender
 let id = `${who.split`@`[0]}`
-if (mcode) {
+/*if (mcode) {
 args[0] = args[0].replace('--code', '').trim()
 if (args[1]) args[1] = args[1].replace('--code', '').trim()
 if (args[0] == '') args[0] = undefined
-console.log(args[0])}
+console.log(args[0])}*/
 if (!fs.existsSync('./serbot/'+ id)){
 fs.mkdirSync('./serbot/'+ id, { recursive: true })}
 args[0] && args[0] != undefined ? fs.writeFileSync('./jadibts/' + id + '/creds.json', JSON.stringify(JSON.parse(Buffer.from(args[0], 'base64').toString('utf-8')), null, '\t')) : ''
@@ -449,7 +449,7 @@ jddt()
 } 
 handler.help = [`jadibot`, `serbot`, `getcode`, `rentbot`]
 handler.tags = [`jadibot`]
-handler.command = /^(code)/i
+handler.command = ['code']
 
 handler.private = false
 
