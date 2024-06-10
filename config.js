@@ -10,15 +10,15 @@ import moment from 'moment-timezone'
 //*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
 global.owner = [
-  ['5218261275256', 'おDanịel.xyz⁩', true],
-  ['5492616532494', 'Samuel Fts', true],
-  ['51910108980'],
-  ['5218139760662'],
-  ['5218132588591'],
-  ['5218261275256'],
-  ['5218261009198'],
-  ['50662333781'],
-  ['5218261000681']
+  ['51955918117', 'Daniel', true],
+  ['524434703586', 'Azami', true],
+  ['519559158117'],
+  ['519559158117'],
+  ['519559158117'],
+  ['519559158117'],
+  ['519559158117'],
+  ['519559158117'],
+  ['519559158117']
 
 ]
 
@@ -30,7 +30,7 @@ global.prems = []
 //*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
 global.packname = `Sumi Sakurasawa - MD`
-global.author = 'おDanịel.xyz'
+global.author = 'Daniel'
 global.botname = 'Sumi Sakurasawa - MD'
 global.textbot = `© 2024 Starlights Team | All rights reserved`
 
