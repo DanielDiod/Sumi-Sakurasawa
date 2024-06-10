@@ -310,8 +310,8 @@ parentw.sendMessage(m.chat, {text : rtx2 + drmer.toString('utf-8')}, { quoted: m
 await sleep(5000)
 let secret = await conn.requestPairingCode((m.sender.split`@`[0]))
 await m.reply(secret) //}
-const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
-console.log(code)
+//const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
+//console.log(code)
 const endSesion = async (loaded) => {
 if (!loaded) {
 try {
