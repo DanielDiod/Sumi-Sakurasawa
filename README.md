@@ -7,7 +7,7 @@
         <a href="#"><img title="simple-whatsapp-bot" src="https://img.shields.io/badge/-SIMPLE--WHATSAPP--BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
     </p>
     <p>
-        <a href="https://github.com/StarlightsTeam"><img title="Author"    src="https://img.shields.io/badge/Author-おDaniel-purple.svg?style=for-the-badge&logo=github"></a>
+        <a href="https://github.com/DanielDod"><img title="Author"    src="https://img.shields.io/badge/Author-おDaniel-purple.svg?style=for-the-badge&logo=github"></a>
     </p>
     <p>
         <a href="https://github.com/StarlightsTeam"><img title="Followers" src="https://img.shields.io/github/followers/StarlightsTeam?color=blue&style=flat-square"></a>
@@ -128,6 +128,6 @@ Samuel Fts
 <div align="center">
   <h1 align="center">Editor y Propietario de la Bot</h1>
 
-<a href="https://github.com/SumiFX"><img src="https://tinyurl.com/2ys6a27z" width="300" height="300" alt="おDaniel"/></a>
+<a href="https://github.com/DanielDiod"><img src="https://tinyurl.com/2ys6a27z" width="300" height="300" alt="おDaniel"/></a>
 
 `© Sumi Sakurasawa - MD / StarlightsTeam - By おDaniel`
