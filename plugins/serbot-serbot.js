@@ -127,7 +127,7 @@ async function connectionUpdate(update) {
     await parent.sendMessage(m.chat, {text : args[0] ? 'Conectado con exito' : 'Conectado exitosamente con WhatsApp\n\n*Nota:* Esto es temporal\nSi el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran\n\nPuede iniciar sesión sin el codigo qr con el siguiente mensaje, envialo cuando no funcione el bot...\n\nEl número del bot puede cambiar, guarda este enlace:\nhttps://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S' }, { quoted: m })
     await sleep(5000)
     if (args[0]) return
-		await parent.sendMessage(conn.user.jid, {text : La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*}, { quoted: m })
+		await parent.sendMessage(conn.user.jid, {text : 'La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*'}, { quoted: m })
 		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
 	  }
  
