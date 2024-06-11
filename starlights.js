@@ -32,12 +32,12 @@ let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => 
 
   let authFolderB = crypto.randomBytes(10).toString('hex').slice(0, 8)
 
-    if (!fs.existsSync("./serbot/"+ authFolderB)){
-        fs.mkdirSync("./serbot/"+ authFolderB, { recursive: true });
+    if (!fs.existsSync("./serbot/"+ authFolder)){
+        fs.mkdirSync("./serbot/"+ authFolder, { recursive: true });
     }
-    args[0] ? fs.writeFileSync("./serbot/" + authFolderB + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
+    args[0] ? fs.writeFileSync("./serbot/" + authFolder + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
     
-const {state, saveState, saveCreds} = await useMultiFileAuthState(./serbot/${authFolderB})
+const {state, saveState, saveCreds} = await useMultiFileAuthState(./serbot/${authFolder})
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
 const {version} = await fetchLatestBaileysVersion();
@@ -128,7 +128,7 @@ async function connectionUpdate(update) {
     await sleep(5000)
     if (args[0]) return
 		await parent.sendMessage(conn.user.jid, {text : "La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*" }, { quoted: m })
-		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
+		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolder + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
 	  }
  
   }
