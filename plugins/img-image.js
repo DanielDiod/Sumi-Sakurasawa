@@ -1,4 +1,4 @@
-//import Scraper from "@SumiFX/Scraper"
+import Scraper from "@SumiFX/Scraper"
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) return m.reply('🍭 Ingresa el nombre de la imágen que estas buscando.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* Sumi Sakurasawa Icons`)
