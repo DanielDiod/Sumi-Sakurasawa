@@ -32,12 +32,12 @@ let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => 
 
   let authFolderB = crypto.randomBytes(10).toString('hex').slice(0, 8)
 
-    if (!fs.existsSync("./serbot/"+ folderSub)){
-        fs.mkdirSync("./serbot/"+ folderSub, { recursive: true });
+    if (!fs.existsSync("./serbot/"+ authFolderB)){
+        fs.mkdirSync("./serbot/"+ authFolderB, { recursive: true });
     }
-    args[0] ? fs.writeFileSync("./serbot/" + folderSub + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
+    args[0] ? fs.writeFileSync("./serbot/" + authFolderB + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
     
-const {state, saveState, saveCreds} = await useMultiFileAuthState(./serbot/${serbotFolder})
+const {state, saveState, saveCreds} = await useMultiFileAuthState(./serbot/${authFolderB})
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
 const {version} = await fetchLatestBaileysVersion();
@@ -86,12 +86,12 @@ if (methodCode && !conn.authState.creds.registered) {
     setTimeout(async () => {
         let codeBot = await conn.requestPairingCode(cleanedNumber);
         codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-        let txt = '`–  S E R B O T  -  S U B B O T`\n\n'
+        let txt = ` –  S E R B O T  -  S U B B O T\n\n`
             txt +=`┌  ✩  *Usa este Código para convertirte en un Sub Bot*\n`
             txt +=`│  ✩  Pasos\n`
             txt +=`│  ✩  *1* : Haga click en los 3 puntos\n`
             txt +=`│  ✩  *2* : Toque dispositivos vinculados\n`
-            txt +=`│  ✩  *3* : Selecciona *Vincular con el número de teléfono*\n`
+            txt +=`│  ✩  *3* : Selecciona *Vincular con el número de teléfono*\n` 
             txt +=`└  ✩  *4* : Escriba el Codigo\n\n`
             txt +=`*Nota:* Este Código solo funciona en el número que lo solicito`
          await parent.sendMessage(m.chat, { text: txt }, { quoted: m })
@@ -127,8 +127,8 @@ async function connectionUpdate(update) {
     await parent.sendMessage(m.chat, {text : args[0] ? 'Conectado con exito' : 'Conectado exitosamente con WhatsApp\n\n*Nota:* Esto es temporal\nSi el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran\n\nPuede iniciar sesión sin el codigo qr con el siguiente mensaje, envialo cuando no funcione el bot...\n\nEl número del bot puede cambiar, guarda este enlace:\nhttps://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S' }, { quoted: m })
     await sleep(5000)
     if (args[0]) return
-		await parent.sendMessage(conn.user.jid, {text : "La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*"}, { quoted: m })
-		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + folderSub + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
+		await parent.sendMessage(conn.user.jid, {text : "La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*" }, { quoted: m })
+		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
 	  }
  
   }
@@ -142,27 +142,23 @@ async function connectionUpdate(update) {
       delete global.conns[i]
       global.conns.splice(i, 1)
     }}, 60000)
+    
 
 	
-let handler = await import("../handler.js")
-
-    let creloadHandler = async function (restatConn) {
-      try {
-        const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console.error)
-        if (Object.keys(Handler || {}).length) {
-          handler = Handler
-        }
-      } catch (e) {
-        console.error(e)
-      }
-      if (restatConn) {
-        try {
-          conn.ws.close()
-        } catch {}
-        conn.ev.removeAllListeners()
-        conn = makeWASocket(connectionOptions)
-        isInit = true
-      }
+let handler = await import('../handler.js')
+let creloadHandler = async function (restatConn) {
+try {
+const Handler = await import(../handler.js?update=${Date.now()}).catch(console.error)
+if (Object.keys(Handler || {}).length) handler = Handler
+} catch (e) {
+console.error(e)
+}
+if (restatConn) {
+try { conn.ws.close() } catch { }
+conn.ev.removeAllListeners()
+conn = makeWASocket(connectionOptions)
+isInit = true
+}
 
 if (!isInit) {
 conn.ev.off('messages.upsert', conn.handler)
