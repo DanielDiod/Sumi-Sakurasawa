@@ -86,14 +86,14 @@ if (methodCode && !conn.authState.creds.registered) {
     setTimeout(async () => {
         let codeBot = await conn.requestPairingCode(cleanedNumber);
         codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-        let txt = ' –  S E R B O T  -  S U B B O T\n\n'
-            txt +='┌  ✩  *Usa este Código para convertirte en un Sub Bot*\n'
-            txt +='│  ✩  Pasos\n'
-            txt +='│  ✩  *1* : Haga click en los 3 puntos\n'
-            txt +='│  ✩  *2* : Toque dispositivos vinculados\n'
-            txt +='│  ✩  *3* : Selecciona *Vincular con el número de teléfono*\n' 
-            txt +='└  ✩  *4* : Escriba el Codigo\n\n'
-            txt +='*Nota:* Este Código solo funciona en el número que lo solicito'
+        let txt = ` –  S E R B O T  -  S U B B O T`\n\n
+            txt +=`┌  ✩  *Usa este Código para convertirte en un Sub Bot*`\n
+            txt +=`│  ✩  Pasos`\n
+            txt +=`│  ✩  *1* : Haga click en los 3 puntos`\n
+            txt +=`│  ✩  *2* : Toque dispositivos vinculados`\n
+            txt +=`│  ✩  *3* : Selecciona *Vincular con el número de teléfono*`\n 
+            txt +=`└  ✩  *4* : Escriba el Codigo`\n\n
+            txt +=`*Nota:* Este Código solo funciona en el número que lo solicito`
          await parent.sendMessage(m.chat, { text: txt }, { quoted: m })
          await parent.sendMessage(m.chat, { text: codeBot }, { quoted: m })
         rl.close();
