@@ -142,23 +142,27 @@ async function connectionUpdate(update) {
       delete global.conns[i]
       global.conns.splice(i, 1)
     }}, 60000)
-    
 
 	
-let handler = await import('../handler.js')
-let creloadHandler = async function (restatConn) {
-try {
-const Handler = await import(../handler.js?update=${Date.now()}).catch(console.error)
-if (Object.keys(Handler || {}).length) handler = Handler
-} catch (e) {
-console.error(e)
-}
-if (restatConn) {
-try { conn.ws.close() } catch { }
-conn.ev.removeAllListeners()
-conn = makeWASocket(connectionOptions)
-isInit = true
-}
+let handler = await import("../handler.js")
+
+    let creloadHandler = async function (restatConn) {
+      try {
+        const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console.error)
+        if (Object.keys(Handler || {}).length) {
+          handler = Handler
+        }
+      } catch (e) {
+        console.error(e)
+      }
+      if (restatConn) {
+        try {
+          conn.ws.close()
+        } catch {}
+        conn.ev.removeAllListeners()
+        conn = makeWASocket(connectionOptions)
+        isInit = true
+      }
 
 if (!isInit) {
 conn.ev.off('messages.upsert', conn.handler)
