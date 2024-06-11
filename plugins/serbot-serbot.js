@@ -128,7 +128,7 @@ async function connectionUpdate(update) {
     await sleep(5000)
     if (args[0]) return
 		await parent.sendMessage(conn.user.jid, {text : "La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*"}, { quoted: m })
-		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
+		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + folderSub + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
 	  }
  
   }
