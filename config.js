@@ -11,7 +11,7 @@ import moment from 'moment-timezone'
 
 global.owner = [
   ['51955918117', 'Daniel', true],
-  ['5214434703586', 'Azami', true],
+  ['5214434703586', 'Zam', false],
   ['51955918117'],
   ['51955918117'],
   ['51955918117'],
@@ -33,6 +33,7 @@ global.packname = `Sumi Sakurasawa - MD`
 global.author = 'Daniel'
 global.botname = 'Sumi Sakurasawa - MD'
 global.textbot = `© 2024 Starlights Team | All rights reserved`
+global.wm = `Sumi`
 
 //*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
