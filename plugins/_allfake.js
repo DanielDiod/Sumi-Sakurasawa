@@ -37,9 +37,9 @@ const emoji = await moji[Math.floor(moji.length * Math.random())]
 var credit = 'X8KpIFJlcXVlc3RlZCBieSBDdXJpb3NpdHlCb3Rf'
 global.cred = Buffer.from(credit, 'base64')
 
+let imagen = './src/menu.jpg'
 
-
-global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', serverMessageId: '', newsletterName: 'Sumi Bot 💭' }, externalAdReply: { title: packname, body: wm, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: group, thumbnail: '', sourceUrl: '' }}}, { quoted: m } //fake con reenviado de canal
+global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', serverMessageId: '', newsletterName: 'Sumi Bot 💭' }, externalAdReply: { title: packname, body: wm, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: imagen, thumbnail: imagen, sourceUrl: grouo }}}, { quoted: m } //fake con reenviado de canal
 }
 
 export default handler
