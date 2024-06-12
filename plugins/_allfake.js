@@ -39,7 +39,7 @@ global.cred = Buffer.from(credit, 'base64')
 
 
 
-global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', serverMessageId: '', newsletterName: 'Sumi Bot 💭' }, externalAdReply: { title: packname, body: wm, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: '', thumbnail: '', sourceUrl: '' }}}, { quoted: m } //fake con reenviado de canal
+global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', serverMessageId: '', newsletterName: 'Sumi Bot 💭' }, externalAdReply: { title: packname, body: wm, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: group, thumbnail: '', sourceUrl: '' }}}, { quoted: m } //fake con reenviado de canal
 }
 
 export default handler
