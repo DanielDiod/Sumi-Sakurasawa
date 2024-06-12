@@ -27,7 +27,7 @@ let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => 
   let parent = args[0] && args[0] == 'plz' ? _conn : await global.conn
         const fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
   if (!((args[0] && args[0] == 'plz') || (await global.conn).user.jid == _conn.user.jid)) {
-        throw `「𐄢」Solo puedes usar este comando en el bot principal.\n\n「𐄢」 wa.me/${global.conn.user.jid.split`@`[0]}?text=${usedPrefix}serbot2`
+        throw `Solo puedes usar este comando en el bot principal.\n\nWa.me/${global.conn.user.jid.split`@`[0]}?text=${usedPrefix}serbot2`
 }
 
         //=====
