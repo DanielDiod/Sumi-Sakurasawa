@@ -95,6 +95,7 @@
 "readline": "^1.3.0",
 "similarity": "^1.2.1",
 "@SumiFX/Scraper": "github:SumiFX/SumiFX-Scraper",
+"@StarlightsTeam/Scraper": "github:StarlightsTeam/StarlightsTeam-Scraper",	
 "socket.io": "^4.6.1",
 "syntax-error": "^1.4.0",
 "terminal-image": "^2.0.0",
