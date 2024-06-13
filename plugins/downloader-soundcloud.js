@@ -1,11 +1,11 @@
-import Scraper from "@SumiFX/Scraper"
+import Starlights from "@StarlightsTeam/Scraper"
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 if (!args[0]) return m.reply('🍭 Ingresa el enlace de algún Track de SoundCloud.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* https://m.soundcloud.com/geminiaaliyah/if-only`)
 
 let user = global.db.data.users[m.sender]
 try {
-let { title, views, thumbnail, dl_url } = await Scraper.soundl(args[0])
+let { title, views, thumbnail, dl_url } = await Starlights.soundl(args[0])
 let txt = `╭─⬣「 *SoundCloud Download* 」⬣\n`
     txt += `│  ≡◦ *🍭 Nombre ∙* ${title}\n`
     txt += `│  ≡◦ *🪴 Vistas ∙* ${views}\n`
