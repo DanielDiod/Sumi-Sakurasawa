@@ -9,7 +9,7 @@ let handler = async (m, {conn, usedPrefix, text}) => {
   if (!text && !m.quoted)
     return conn.reply(
       m.chat,
-      `*✘error✘*\n\n_. ᩭ✎Use el comandó correctamente_\n\n_Ejemplo : . promote @daniel🍁_`,
+      `🚩 Use el comandó correctamente\n\n_Ejemplo : . promote @daniel`,
       m
     );
   if (number.length > 13 || (number.length < 11 && number.length > 0))
@@ -26,7 +26,7 @@ let handler = async (m, {conn, usedPrefix, text}) => {
   } catch (e) {
   } finally {
     conn.groupParticipantsUpdate(m.chat, [user], "promote");
-    conn.reply(m.chat, `_. ᩭ✎Ordenes Recibidas_`, m);
+    conn.reply(m.chat, `🚩 ordenes recibidas`, m);
   }
 };
 handler.help = ["*593xxx*", "*@usuario*", "*responder chat*"].map((v) => "promote " + v);
