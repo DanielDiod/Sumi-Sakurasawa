@@ -1,45 +1,36 @@
-import pkg from '@whiskeysockets/baileys'
-import fs from 'fs'
 import fetch from 'node-fetch'
-import axios from 'axios'
-import moment from 'moment-timezone'
-const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = pkg
 
-var handler = m => m
-handler.all = async function (m) {
+export async function before(m, { conn }) {
+let img = await (await fetch(`https://tinyurl.com/2c5hk765`)).buffer()
 
-global.getBuffer = async function getBuffer(url, options) {
-try {
-options ? options : {}
-var res = await axios({
-method: "get",
-url,
-headers: {
-'DNT': 1,
-'User-Agent': 'GoogleBot',
-'Upgrade-Insecure-Request': 1
-},
-...options,
-responseType: 'arraybuffer'
-})
-return res.data
-} catch (e) {
-console.log(`Error : ${e}`)
-}}
+ global.rcanal = {
+    contextInfo: {
+    	isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: "120363191779210764@newsletter",
+      serverMessageId: 100,
+      newsletterName: namechannel,
+    },
+    },
+  }
 
-let pp = ''
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-//let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/327f6ad853cb4f405aa80.jpg')
-
-const moji = (await axios.get(`https://raw.githubusercontent.com/GataNina-Li/YartexBot-MD/main/storage/juegos/emojis.json`)).data
-const emoji = await moji[Math.floor(moji.length * Math.random())]
-
-var credit = 'X8KpIFJlcXVlc3RlZCBieSBDdXJpb3NpdHlCb3Rf'
-global.cred = Buffer.from(credit, 'base64')
-
-let imagen = './src/menu.jpg'
-
-global.fake = { contextInfo: { mentionedJid: conn.parseMention(wm), forwardingScore: 1, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', serverMessageId: '', newsletterName: 'Sumi Bot 💭' }, externalAdReply: { title: packname, body: wm, mediaType: 1, renderLargerThumbnail: false, previewType: `PHOTO`, thumbnailUrl: imagen, thumbnail: imagen, sourceUrl: group }}}, { quoted: m } //fake con reenviado de canal
+ global.adReply = {
+	    contextInfo: { 
+             forwardingScore: 9999, 
+                 isForwarded: false, 
+                    externalAdReply: {
+				    showAdAttribution: true,
+					title: botname,
+					body: textbot,
+					mediaUrl: null,
+					description: null,
+					previewType: "PHOTO",
+					thumbnailUrl: img,
+                    thumbnail: img,
+		           sourceUrl: canal,
+		           mediaType: 1,
+                   renderLargerThumbnail: true
+				}
+			}
+		}
 }
-
-export default handler
