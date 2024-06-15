@@ -11,7 +11,7 @@ let teks = `*🔎 Resultado de* : ${text}\n\n`
 for (let g of res) {
 teks += `*🍭 Titulo ∙* ${g.title}\n*📚 Info ∙* ${g.snippet}\n*⛓ Url ∙* ${g.link}\n\n`
 }
-conn.reply(m.chat, teks, m)
+conn.reply(m.chat, teks, m, fake,)
 })
 }
 handler.help = ['google <búsqueda>']
