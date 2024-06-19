@@ -87,7 +87,7 @@ export async function handler(chatUpdate) {
                     banned: false,
                     warn: 0,
                     level: 0,
-                    useDocument: true,
+                    useDocument: false,
                     premium: false,
                     premiumTime: 0,
                 }
