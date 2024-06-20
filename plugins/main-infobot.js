@@ -26,7 +26,7 @@ await conn.sendFile(m.chat, pp, 'thumbnail.jpg', txt, m)
 }
 handler.help = ['status']
 handler.tags = ['main']
-handler.command = /^(info|estado|status|estate|state|stado|stats|uptime)$/i
+handler.command = /^(info|estado|status|estate|state|stado|stats)$/i
 export default handler
 
 function clockString(ms) {
