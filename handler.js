@@ -428,7 +428,7 @@ global.dfail = (type, m, conn) => {
         restrict: '• Esta función está *deshabilitada*',
         nsfw: '• En este grupo está prohibido el contenido +18'
     }[type]
-    if (msg) return conn.reply(m.chat, msg, m)
+    if (msg) return conn.reply(m.chat, msg, m,rcanal)
 }
 
 let file = global.__filename(import.meta.url, true)
