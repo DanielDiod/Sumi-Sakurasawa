@@ -30,7 +30,7 @@ let handler = async (m, { conn, usedPrefix, text }) => {
       txt += `	🔖  *Views* : ${video.play}\n`;
       txt += `	🔖  *Likes* : ${video.like}\n\n`;
     }
-    const url = "https://i.imgur.com/BO4TfMR.png"; 
+    const url = "https://telegra.ph/file/dd053a0c4d2e7eba7cd3a.jpg"; 
     const responseImg = await axios.get(url, { responseType: 'arraybuffer' });
     await conn.sendFile(m.chat, responseImg.data, "thumbnail.png", txt, m, null, rcanal); 
     await m.react("✅");
