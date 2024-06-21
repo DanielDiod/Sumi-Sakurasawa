@@ -33,6 +33,7 @@ global.prems = []
 global.packname = `Sumi Sakurasawa - MD`
 global.author = 'Daniel'
 global.botname = 'Sumi Sakurasawa - MD'
+global.listo = '*🍭 Aqui tiene*'
 global.textbot = `© 2024 Starlights Team | All rights reserved`
 global.wm = `Sumi`
 
