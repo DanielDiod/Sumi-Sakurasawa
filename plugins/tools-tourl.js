@@ -12,7 +12,7 @@ let handler = async (m) => {
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
   let img = await (await fetch(`${link}`)).buffer()
-  let txt = '`-  T E L E G R A P H  -  U P L O A D E R*\n\n'
+  let txt = '`-  T E L E G R A P H  -  U P L O A D E R`\n\n'
       txt += `  *🔖 Enlace* : ${link}\n`
       txt += `  *🔖 Acortado* : ${await shortUrl(link)}\n`
       txt += `  *🔖 Tamaño* : ${formatBytes(media.length)}\n`
