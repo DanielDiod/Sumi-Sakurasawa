@@ -1,83 +1,37 @@
-//créditos del code SAMU
 import axios from 'axios'
-const {
-    proto,
-   generateWAMessageFromContent,
-    prepareWAMessageMedia,
-    generateWAMessageContent,
-    getDevice
-} = (await import('@whiskeysockets/baileys')).default
+import Starlights from '@StarlightsTeam/Scraper'
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) return conn.reply(m.chat, '> 🍟: *Ingresa lo que desea buscar en Tiktok*', m)
-    async function createVideo(url) {
-        const { videoMessage } = await generateWAMessageContent({
-            video: { url }
-        }, { upload: conn.waUploadToServer })
-        return videoMessage
+let handler = async (m, { conn, usedPrefix, command, text, args }) => {
+  if (!text) return conn.reply(m.chat, `🚩 Ingresa el nombre video que deseas buscar en TikTok.\n\nEjemplo:\n> *${usedPrefix + command}* Ai Hoshino Edit`, m, rcanal)
+  
+  await m.react('🕓')
+  let img = await (await axios.get('https://i.ibb.co/kyTcqt9/file.jpg', { responseType: 'arraybuffer' })).data
+
+  try {
+    let data = await Starlights.tiktokSearch(text)
+
+    if (data && data.length > 0) {
+      let txt = `*乂  T I K T O K  -  S E A R C H*`
+      for (let i = 0; i < (50 <= data.length ? 50 : data.length); i++) {
+        let video = data[i]
+        txt += `\n\n`
+        txt += `  *» Nro* : ${i + 1}\n`
+        txt += `  *» Título* : ${video.title}\n`
+        txt += `  *» Autor* : ${video.author}\n`
+        txt += `  *» Url* : ${video.url}`
+      }
+      await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
+      await m.react('✅')
+    } else {
+      await conn.react('✖️')
     }
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1))
-            [array[i], array[j]] = [array[j], array[i]]
-        }
-    }
-    try {
-        let push = [];
-        let { data } = await axios.get(`https://apis-starlights-team-cbb6f3a3.koyeb.app/starlight/tiktoksearch?text=${text}`)
-        let res = data.data
-        shuffleArray(res)
-        let ult = res.splice(0, 7)
-        let i = 1
-        for (let result of ult) {
-            push.push({
-                body: proto.Message.InteractiveMessage.Body.fromObject({
-                    text: null
-                }),
-                footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                    text: "© Starlights Team"
-                }),
-                header: proto.Message.InteractiveMessage.Header.fromObject({
-                    title: `${result.title}`,
-                    hasMediaAttachment: true,
-                    videoMessage: await createVideo(result.nowm)
-                }),
-                nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
-                    buttons: [
-                     /*   {
-                            name: "cta_url",
-                            buttonParamsJson: `{"display_text":"url","Link":"${result.nowm}","merchant_url":"${result.nowm}"}`
-                        }*/
-                    ]
-                })
-            });
-        }
-        const msg = generateWAMessageFromContent(m.chat, {
-            viewOnceMessage: {
-                message: {
-                    messageContextInfo: {
-                        deviceListMetadata: {},
-                        deviceListMetadataVersion: 2
-                    },
-                    interactiveMessage: proto.Message.InteractiveMessage.fromObject({
-                        body: proto.Message.InteractiveMessage.Body.create({
-                            text: '*\`T I K T O K - S E A R C H\`*'
-                        }),
-                        footer: proto.Message.InteractiveMessage.Footer.create({
-                            text: null
-                        }),
-                        header: proto.Message.InteractiveMessage.Header.create({
-                            hasMediaAttachment: false
-                        }),
-                        carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({
-                            cards: [...push]
-                        })
-                    })
-                }
-            }
-        }, {})
-await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
-} catch (error) {        
-}}
-handler.command = ['tiktoksearch']
+  } catch {
+    await m.react('✖️')
+  }
+}
+handler.tags = ['search']
+handler.help = ['tiktoksearch *<búsqueda>*']
+handler.command = ['tiktoksearch', 'tiktoks']
+handler.register = true
+
 export default handler
