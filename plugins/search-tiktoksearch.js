@@ -1,37 +1,47 @@
-import axios from 'axios'
-import Starlights from '@StarlightsTeam/Scraper'
+import axios from "axios";
 
-let handler = async (m, { conn, usedPrefix, command, text, args }) => {
-  if (!text) return conn.reply(m.chat, `🚩 Ingresa el nombre video que deseas buscar en TikTok.\n\nEjemplo:\n> *${usedPrefix + command}* Ai Hoshino Edit`, m, rcanal)
-  
-  await m.react('🕓')
-  let img = await (await axios.get('https://i.ibb.co/kyTcqt9/file.jpg', { responseType: 'arraybuffer' })).data
-
+let handler = async (m, { conn, usedPrefix, text }) => {
+  if (!text)
+    return conn.reply(
+      m.chat,
+      "*🚩 𝙸𝚗𝚐𝚛𝚎𝚜𝚊 𝚕𝚘 𝚚𝚞𝚎 𝚍𝚎𝚜𝚎𝚊𝚜 𝚋𝚞𝚜𝚌𝚊𝚛 𝚎𝚗 𝚃𝚒𝚔𝚃𝚘𝚔.*",
+      m,
+    );
+  await m.react("💙");
   try {
-    let data = await Starlights.tiktokSearch(text)
-
-    if (data && data.length > 0) {
-      let txt = `*乂  T I K T O K  -  S E A R C H*`
-      for (let i = 0; i < (50 <= data.length ? 50 : data.length); i++) {
-        let video = data[i]
-        txt += `\n\n`
-        txt += `  *» Nro* : ${i + 1}\n`
-        txt += `  *» Título* : ${video.title}\n`
-        txt += `  *» Autor* : ${video.author}\n`
-        txt += `  *» Url* : ${video.url}`
-      }
-      await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, null, rcanal)
-      await m.react('✅')
-    } else {
-      await conn.react('✖️')
+    let response = await axios.get(`https://delirius-api-oficial.vercel.app/api/tiktoksearch?query=${encodeURIComponent(text)}`);
+    let results = response.data.meta;
+    if (!results.length)
+      return conn
+        .reply(
+          m.chat,
+          "No se encontraron resultados, intenta con un nombre más corto.",
+          m,
+        )
+        .then((_) => m.react("✖️"));
+    let txt = '`- ＴｉｋＴｏｋ － Ｓｅａｒｃｈ`\n\n';
+    for (let i = 0; i < (30 <= results.length ? 30 : results.length); i++) {
+      let video = results[i];
+      txt += `\n`;
+      txt += `	❧  *ᴛɪᴛᴜʟᴏ* : ${video.title}\n`;
+      txt += `	❧  *ᴅᴜʀᴀᴄɪÓɴ* : ${video.duration} segundos\n`;
+      txt += `	❧  *ᴜʀʟ* : ${video.url}\n`;
+      txt += `	❧  *ᴀᴜᴛᴏʀ* : ${video.author.username || "×"}\n`;
+      txt += `	❧  *ᴠɪᴇᴡs* : ${video.play}\n`;
+      txt += `	❧  *ᴄᴏʀᴀᴢᴏɴᴇꜱ* : ${video.like}\n\n`;
     }
-  } catch {
-    await m.react('✖️')
+    const url = "https://i.imgur.com/BO4TfMR.png"; 
+    const responseImg = await axios.get(url, { responseType: 'arraybuffer' });
+    await conn.sendFile(m.chat, responseImg.data, "thumbnail.png", txt, m); 
+    await m.react("✅");
+  } catch (e) {
+    console.error(e);
+    conn.reply(m.chat, "Ocurrió un error al buscar en TikTok.", m);
+    m.react("❌");
   }
-}
-handler.tags = ['search']
-handler.help = ['tiktoksearch *<búsqueda>*']
-handler.command = ['tiktoksearch', 'tiktoks']
-handler.register = true
-
-export default handler
+};
+handler.help = ["tiktoksearch"];
+handler.tags = ["search"];
+handler.command = ["tiktoksearch", "tiks"];
+handler.register = true;
+export default handler;
