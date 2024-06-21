@@ -4,10 +4,10 @@ let handler = async (m, { conn, usedPrefix, text }) => {
   if (!text)
     return conn.reply(
       m.chat,
-      "*🚩 𝙸𝚗𝚐𝚛𝚎𝚜𝚊 𝚕𝚘 𝚚𝚞𝚎 𝚍𝚎𝚜𝚎𝚊𝚜 𝚋𝚞𝚜𝚌𝚊𝚛 𝚎𝚗 𝚃𝚒𝚔𝚃𝚘𝚔.*",
+      "*🍭 Ingrese lo que deseas buscar en  Tiktok .*",
       m,
     );
-  await m.react("💙");
+  await m.react("✅");
   try {
     let response = await axios.get(`https://delirius-api-oficial.vercel.app/api/tiktoksearch?query=${encodeURIComponent(text)}`);
     let results = response.data.meta;
