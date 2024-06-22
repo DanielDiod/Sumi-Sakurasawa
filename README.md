@@ -74,6 +74,18 @@ npm start
 - **Support:** [`Bot exclusivo`](https://wa.me/message/FETBF7YBO37CG1)
 
 - [x] **Configuración** <details><summary>**Ajustes del Servidor - Igna • Bot**</summary><img src="https://qu.ax/CqMG.jpg"></details>
+------------------------
+### 💎 FlarexCloud
+> Empiece a usar FlarexCloud para activar **🍭 Sumi - Sakurasawa - MD**
+
+<a href="https://www.flarex.cloud"><img src="https://cdn.flarex.cloud/deploy.png" height="60px"></a>
+### Información sobre FlarexCloud
+
+- **Página:** [`Aquí`](https://www.flarex.cloud)
+- **Dashboard / Área de Pagos:** [`Aquí`](https://billing.flarex.cloud)
+- **Game Panel:** [`Aquí`](https://gamepanel.flarex.cloud)
+- **Discord:** [`Aquí`](https://discord.flarex.cloud)
+- **Contacto:** [`hi@flarex.cloud`](mailto:hi@flarex.cloud) / [`support@flarex.cloud`](mailto:support@flarex.cloud) / [`partnerships@flarex.cloud`](mailto:partnerships@flarex.cloud)
 ---------
 ### `𝐎𝐁𝐓𝐄𝐍𝐄𝐑 𝐎𝐓𝐑𝐎 𝐂𝐎𝐃𝐈𝐆𝐎 𝐐𝐑 👀
 ```bash
