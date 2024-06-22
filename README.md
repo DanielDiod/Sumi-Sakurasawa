@@ -9,6 +9,7 @@
     <p>
         <a href="https://github.com/DanielDod"><img title="Author"    src="https://img.shields.io/badge/Author-Daniel-purple.svg?style=for-the-badge&logo=github"></a>
     </p>
+---------        
 ## <img src="https://i0.wp.com/i230.photobucket.com/albums/ee124/joaclint/joaclint_istgud/ruedas.gif" alt="Herramientas" width="35" height="35"> Herramientas
 
 ```bash
@@ -123,15 +124,6 @@ npm start
 - Canal Oficial Del Bot
 
 * <a href="https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
----------
-
-## `Colaboradores` 
-<a href="https://github.com/Sopiix"><img src="https://github.com/Sopiix.png" width="200" height="200" alt="Sopi<3"/></a>
-<a
-href="https://github.com/Jxtxn17"><img src="https://github.com/Jxtxn17.png" width="200" height="200" alt="Jxtxn17"/></a>
-<a
-href="https://github.com/Alba070503"><img src="https://github.com/Alba070503.png" width="200" height="200" alt="Jxtxn17"/></a>
-
 ---------
 <div align="center">
   <h1 align="center">Editor y Propietario del Bot</h1>
