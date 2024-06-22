@@ -122,9 +122,9 @@ npm start
 ## <img src="https://static.wikia.nocookie.net/nyancat/images/d/d3/Nyan-cat.gif/revision/latest/scale-to-width-down/400?cb=20131231222500&path-prefix=es" alt="Grupo" width="45" height="43"> Grupo de WhatsApp
 
 
-- Canal Oficial Del Bot
+- Grupo Oficial Del Bot
 
-* <a href="https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+* <a href="https://chat.whatsapp.com/BCwy3LycCvSK5dHoslCEK9"><img alt="Group" src="https://img.shields.io/badge/Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 ---------
 <div align="center">
   <h1 align="center">Editor y Propietario del Bot</h1>
