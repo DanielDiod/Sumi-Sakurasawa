@@ -37,7 +37,7 @@ pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn
 ```
 
 ```bash
-git clone https://github.com/DanielDiod/DokiBot.git && cd DokiBot
+git clone https://github.com/DanielDiod/Sumi-Sakurasawa.git && cd Sumi-Sakurasawa
 ```
 
 ```bash
@@ -92,7 +92,7 @@ npm start
 𝐄𝐒𝐂𝐑𝐈𝐁𝐄 𝐋𝐎𝐒 𝐒𝐈𝐆𝐔𝐈𝐄𝐍𝐓𝐄𝐒 𝐂𝐎𝐌𝐀𝐍𝐃𝐎𝐒 𝐔𝐍𝐎 𝐏𝐎𝐑 𝐔𝐍𝐎:
 > cd 
 > cd DokiBot 
-> rm -rf IgnaSession
+> rm -rf Session
 > npm start
 ```
 -------
@@ -100,7 +100,7 @@ npm start
 ```bash
 𝐄𝐒𝐂𝐑𝐈𝐁𝐄 𝐋𝐎𝐒 𝐒𝐈𝐆𝐔𝐈𝐄𝐍𝐓𝐄𝐒 𝐂𝐎𝐌𝐀𝐍𝐃𝐎𝐒 𝐔𝐍𝐎 𝐏𝐎𝐑 𝐔𝐍𝐎:
 > cd 
-> cd DokiBot
+> cd Sumi-Sakurasawa
 > npm start
 ```
 -------
