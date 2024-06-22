@@ -11,7 +11,7 @@ m.reply(love, null, { mentions: conn.parseMention(love) })
 
 }
 handler.help = ['ship']
-handler.tags = ['juegos']
+handler.tags = ['fun']
 handler.command = /^(ship)$/i
 
 handler.register = true
