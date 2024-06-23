@@ -18,16 +18,16 @@
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/StarlightsTeam/Ai-Hoshino",
+  "homepage": "https://github.com/DanielDiod/Sumi-Sakurasawa",
   "author": {
-    "name": "StarlightsTeam"
+    "name": "DanielDiod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StarlightsTeam/Ai-Hoshino.git"
+    "url": "git+https://github.com/DanielDiod/Sumi-Sakurasawa.git"
   },
   "bugs": {
-    "url": "https://github.com/StarlightsTeam/Ai-Hoshino/issues"
+    "url": "https://github.com/DanielDiod/Sumi-Sakurasawa/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
@@ -37,6 +37,7 @@
         "@bochilteam/scraper-sosmed": "^1.0.5",
         "@ibaraki-douji/pixivts": "^2.4.1",
         "awesome-phonenumber": "^3.4.0",
+        "@SumiFX/Scraper": "github:SumiFX/SumiFX-Scraper",
         "@StarlightsTeam/Scraper": "github:StarlightsTeam/StarlightsTeam-Scraper",
         "axios": "^1.1.2",
         "acrcloud": "^1.4.0",
