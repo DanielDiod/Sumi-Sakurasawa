@@ -19,14 +19,14 @@ let handler = async (m, { conn, text }) => {
       )
       .then((_) => m.react("✖️"));
 
-  for (let i = 0; i < (results.length >= 5 ? 5 : results.length); i++) {
+  for (let i = 0; i < (results.length >= 10 ? 10 : results.length); i++) {
     let txt = '`- Ｐｉｎｔｅｒｅｓｔ-`';
     txt += `\n\n`;
     txt += `	🏳️  *Titulo* : ${results[i].title || "×"}\n`;
     txt += `	🏳️  *Creador* : ${results[i].created_at}\n`;
     txt += `	🏳️  *Url* : ${results[i].media.url}\n`;
     txt += '\n\n`By : Daniel`';
-    await conn.sendFile(m.chat, results[i].media.url, "", txt, m, null, rcanal);
+    await conn.sendFile(m.chat, results[i].media.url, "", txt, m);
   }
 
   await m.react("✅");
