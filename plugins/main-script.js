@@ -14,7 +14,7 @@ let txt = '`- 乂  S C R I P T  -  M A I N`\n\n'
     txt += `	•   *Forks* : ${json.forks_count}\n`
     txt += `	•   *Stars* : ${json.stargazers_count}\n\n`
     txt += `> 🚩 *${textbot}*`
-let img = await (await fetch(`https://telegra.ph/file/5f6d19489d11253300a23.jpg`)).buffer()
+let img = await (await fetch(`https://i.ibb.co/LQKxczm/file.jpg`)).buffer()
 
 await conn.sendAi(m.chat, botname, textbot, txt, img, img, canal, m)
 } catch {
