@@ -7,46 +7,46 @@ import fetch from 'node-fetch'
 import axios from 'axios'
 import moment from 'moment-timezone' 
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-  ['51955918117', 'Daniel', true],
-  ['5214434703586', 'Zam', false],
-  ['51955918117'],
-  ['51955918117'],
-  ['51955918117'],
-  ['51955918117'],
-  ['51955918117'],
-  ['51955918117'],
-  ['51955918117'],
-  ['595983799436']
-
+  ['5218139760662', 'おDanịel.xyz⁩', true],
+  ['5218261275256'],
+  ['5218132588591'],
+  ['5218261009198'],
+  ['5218261000681']
 ]
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.mods = []
 global.prems = []
    
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = `Sumi Sakurasawa - MD`
-global.author = 'Daniel'
-global.botname = 'Sumi Sakurasawa - MD'
-global.listo = '*🍭 Aqui tiene*'
-global.textbot = `© 2024 Starlights Team | All rights reserved`
-global.wm = `Sumi`
+global.packname = ``
+global.author = '{\n "bot": {\n   "name": "Ai Hoshino",\n     "author": "おDanịel.xyz⁩",\n   "status_bot": "active"\n }\n}'
+global.wait = '🐢 *Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ, sᴏʏ ʟᴇɴᴛᴀ... ฅ^•ﻌ•^ฅ*'
+global.botname = '✯ Ai Hoshino - MD ✰'
+global.textbot = `Powered By Starlights Team`
+global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
+global.namechannel = '【 ✯ Starlights Team - Oficial Chanel ✰ 】'
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.group = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
-global.group2 = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
-global.group3 = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
-global.group4 = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
-global.group5 = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
-global.canal = 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33'
+global.catalogo = fs.readFileSync('./storage/img/catalogo.png')
+global.miniurl = fs.readFileSync('./storage/img/miniurl.jpg')
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
+
+global.group = 'https://chat.whatsapp.com/DaZrhN5469XDs6lBNmcdOO'
+global.canal = 'https://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S'
+
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
+
+global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: botname, orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
+
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.cheerio = cheerio
 global.fs = fs
@@ -54,16 +54,16 @@ global.fetch = fetch
 global.axios = axios
 global.moment = moment	
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.multiplier = 69 
 global.maxwarn = '2' // máxima advertencias
 
-//*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
   unwatchFile(file)
-  console.log(chalk.redBright("Se actualizo 'config.js'"))
+  console.log(chalk.redBright("Update 'config.js'"))
   import(`${file}?update=${Date.now()}`)
 })

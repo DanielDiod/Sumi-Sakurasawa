@@ -9,7 +9,6 @@ function connect(conn, PORT) {
     let app = global.app = express()
     console.log(app)
     let server = global.server = createServer(app)
-    // app.use(express.static(path.join(__dirname, 'views')))
     let _qr = 'invalid'
 
     conn.ev.on('connection.update', function appQR({ qr }) {
@@ -20,12 +19,6 @@ function connect(conn, PORT) {
         res.setHeader('content-type', 'image/png')
         res.end(await toBuffer(_qr))
     })
-
-    // let io = new Socket(server)
-    // io.on('connection', socket => {
-    //     let { unpipeEmit } = pipeEmit(conn, socket, 'conn-')
-    //     socket.on('disconnect', unpipeEmit)
-    // })
 
     server.listen(PORT, () => {
         console.log('App listened on port', PORT)
