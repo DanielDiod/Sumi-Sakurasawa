@@ -75,7 +75,7 @@ export async function handler(chatUpdate) {
                     afk: -1,
                     afkReason: '',
                     banned: false,
-                    useDocument: true,
+                    useDocument: false,
                     bank: 0,
                     level: 0,
                 }
@@ -293,7 +293,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    conn.reply(m.chat, `Se agotaron tus *⭐ Estrellas*`, m, rcanal)
+                    conn.reply(m.chat, `Se agotaron tus *🍬 Dulces*`, m, rcanal)
                     continue
                 }
                 let extra = {
@@ -341,7 +341,7 @@ export async function handler(chatUpdate) {
                         }
                     }
                     if (m.limit)
-                        conn.reply(m.chat, `Utilizaste *${+m.limit}* ⭐`, m, rcanal)
+                        conn.reply(m.chat, `Utilizaste *${+m.limit}* 🍬`, m, rcanal)
                 }
                 break
             }
@@ -403,16 +403,16 @@ export async function handler(chatUpdate) {
 
 global.dfail = (type, m, conn, usedPrefix) => {
     let msg = {
-        rowner: `✯ Hola, este comando solo puede ser utilizado por el *Creador* de la Bot.`,
-        owner: `✯ Hola, este comando solo puede ser utilizado por el *Creador* de la Bot y *Sub Bots*.`,
-        mods: `✯ Hola, este comando solo puede ser utilizado por los *Moderadores* de la Bot.`,
-        premium: `✯ Hola, este comando solo puede ser utilizado por Usuarios *Premium*.`,
-        group: `✯ Hola, este comando solo puede ser utilizado en *Grupos*.`,
-        private: `✯ Hola, este comando solo puede ser utilizado en mi Chat *Privado*.`,
-        admin: `✯ Hola, este comando solo puede ser utilizado por los *Administradores* del Grupo.`,
-        botAdmin: `✯ Hola, la bot debe ser *Administradora* para ejecutar este Comando.`,
-        unreg: `✯ Hola, para usar este comando debes estar *Registrado.*\n\nPara usar el bot debes registrarte primero\n\nUtiliza: */reg nombre.edad*\n\n_Ejemplo: */reg おDanịel.xyz⁩.666*_\n\nNo pongas los * *`,
-        restrict: `✯ Hola, esta característica está *deshabilitada.*`  
+        rowner: `🍭 Hola, este comando solo puede ser utilizado por el *Creador* de la Bot.`,
+        owner: `🍭 Hola, este comando solo puede ser utilizado por el *Creador* de la Bot y *Sub Bots*.`,
+        mods: `🍭 Hola, este comando solo puede ser utilizado por los *Moderadores* de la Bot.`,
+        premium: `🍭 Hola, este comando solo puede ser utilizado por Usuarios *Premium*.`,
+        group: `🍭 Hola, este comando solo puede ser utilizado en *Grupos*.`,
+        private: `🍭 Hola, este comando solo puede ser utilizado en mi Chat *Privado*.`,
+        admin: `🍭 Hola, este comando solo puede ser utilizado por los *Administradores* del Grupo.`,
+        botAdmin: `🍭 Hola, la bot debe ser *Administradora* para ejecutar este Comando.`,
+        unreg: `🍭 Hola, para usar este comando debes estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg Daniel.17`,
+        restrict: `🍭 Hola, esta característica está *deshabilitada.*`  
     }[type]
     if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))
 }
