@@ -25,7 +25,7 @@ else global.conns = []
 let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => {
   let parent = args[0] && args[0] == 'plz' ? _conn : await global.conn
   if (!((args[0] && args[0] == 'plz') || (await global.conn).user.jid == _conn.user.jid)) {
-	throw `Este comando solo puede ser usado en el bot principal! wa.me/${global.conn.user.jid.split@[0]}?text=${usedPrefix}code`
+	return m.reply(`Este comando solo puede ser usado en el bot principal! wa.me/${global.conn.user.jid.split`@`[0]}?text=${usedPrefix}code`)
 }
 
   async function serbot() {
@@ -36,8 +36,8 @@ let handler = async (m, { conn: _conn, args, usedPrefix, command, isOwner }) => 
         fs.mkdirSync("./serbot/"+ authFolderB, { recursive: true });
     }
     args[0] ? fs.writeFileSync("./serbot/" + authFolderB + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
-    
-const {state, saveState, saveCreds} = await useMultiFileAuthState(./serbot/${authFolderB})
+
+const {state, saveState, saveCreds} = await useMultiFileAuthState(`./serbot/${authFolderB}`)
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
 const {version} = await fetchLatestBaileysVersion();
@@ -86,18 +86,18 @@ if (methodCode && !conn.authState.creds.registered) {
     setTimeout(async () => {
         let codeBot = await conn.requestPairingCode(cleanedNumber);
         codeBot = codeBot?.match(/.{1,4}/g)?.join("-") || codeBot;
-        let txt = ` –  S E R B O T  -  S U B B O T\n\n`
+        let txt = ` –  *S E R B O T  -  S U B B O T*\n\n`
             txt += `┌  ✩  *Usa este Código para convertirte en un Sub Bot*\n`
             txt += `│  ✩  Pasos\n`
             txt += `│  ✩  *1* : Haga click en los 3 puntos\n`
             txt += `│  ✩  *2* : Toque dispositivos vinculados\n`
             txt += `│  ✩  *3* : Selecciona *Vincular con el número de teléfono*\n` 
-            txt += `  ✩  *4* : Escriba el Codigo\n\n`
+            txt += `└  ✩  *4* : Escriba el Codigo\n\n`
             txt += `*Nota:* Este Código solo funciona en el número que lo solicito`
-         await parent.sendMessage(m.chat, { text: txt }, { quoted: m })
-         await parent.sendMessage(m.chat, { text: codeBot }, { quoted: m })
-        rl.close();
-    }, 3000);
+         await parent.reply(m.chat, txt, m, rcanal)
+         await parent.reply(m.chat, codeBot, m, rcanal)
+        rl.close()
+    }, 3000)
 }
 
 conn.isInit = false
@@ -114,7 +114,7 @@ async function connectionUpdate(update) {
       global.conns.splice(i, 1)
 
           if (code !== DisconnectReason.connectionClosed) {
-          parent.sendMessage(m.chat, { text: "Conexión perdida.. envie el mensaje que se envio al numero donde escaneo el codigo qr" }, { quoted: m })
+          parent.sendMessage(m.chat, { text: "Conexión perdida.." }, { quoted: m })
         } else {
         }
       }
@@ -124,10 +124,12 @@ async function connectionUpdate(update) {
     if (connection == 'open') {
     conn.isInit = true
     global.conns.push(conn)
-    await parent.sendMessage(m.chat, {text : args[0] ? cConectado con exito' : 'Conectado exitosamente con WhatsApp\n\n*Nota:* Esto es temporal\nSi el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran\n\nPuede iniciar sesión sin el codigo qr con el siguiente mensaje, envialo cuando no funcione el bot...\n\nEl número del bot puede cambiar, guarda este enlace:\nhttps://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S' }, { quoted: m })
+    await parent.reply(m.chat, args[0] ? 'Conectado con exito' : 'Conectado exitosamente con WhatsApp\n\n*Nota:* Esto es temporal\nSi el Bot principal se reinicia o se desactiva, todos los sub bots tambien lo haran\n\nEl número del bot puede cambiar, guarda este enlace:\n*-* https://whatsapp.com/channel/0029VaBfsIwGk1FyaqFcK91S', m, rcanal)
     await sleep(5000)
     if (args[0]) return
-		await parent.sendMessage(conn.user.jid, {text :  'La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin escanear otro código *QR*'}, { quoted: m })
+    
+		await parent.reply(conn.user.jid, `La siguiente vez que se conecte envía el siguiente mensaje para iniciar sesión sin utilizar otro código `, m, rcanal)
+		
 		await parent.sendMessage(conn.user.jid, {text : usedPrefix + command + " " + Buffer.from(fs.readFileSync("./serbot/" + authFolderB + "/creds.json"), "utf-8").toString("base64")}, { quoted: m })
 	  }
  
@@ -142,13 +144,11 @@ async function connectionUpdate(update) {
       delete global.conns[i]
       global.conns.splice(i, 1)
     }}, 60000)
-    
-
 	
 let handler = await import('../handler.js')
 let creloadHandler = async function (restatConn) {
 try {
-const Handler = await import(../handler.js?update=${Date.now()}).catch(console.error)
+const Handler = await import(`../handler.js?update=${Date.now()}`).catch(console.error)
 if (Object.keys(Handler || {}).length) handler = Handler
 } catch (e) {
 console.error(e)
@@ -183,7 +183,7 @@ serbot()
 }
 handler.help = ['code']
 handler.tags = ['serbot']
-handler.command = ['code', 'codebot', 'serbot']
+handler.command = ['code', 'codebot']
 handler.rowner = false
 
 export default handler
