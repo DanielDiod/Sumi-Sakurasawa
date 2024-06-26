@@ -414,7 +414,7 @@ global.dfail = (type, m, conn, usedPrefix) => {
         unreg: `🍭 Hola, para usar este comando debes estar *Registrado.*\n\nUtiliza: */reg nombre.edad*\n\n> Ejemplo: /reg Daniel.17`,
         restrict: `🍭 Hola, esta característica está *deshabilitada.*`  
     }[type]
-    if (msg) return conn.reply(m.chat, msg, img, img, canal, m, rcanal).then(_ => m.react('✖️'))
+    if (msg) return conn.sendMessage(m.chat, { text: msg, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, showAdAttribution: true, externalAdReply: { title: 'â•°âœ® AÉª OÊœá´›á´ - MD âœ®â•®', body: 'WÊœá´€á´›êœ±á´€á´˜á´˜ Bá´á´› - Má´œÊŸá´›Éª Dá´‡á´ Éªá´„á´‡', thumbnail: await (await fetch(`https://telegra.ph/file/09e425d49f2b7ac83178e.jpg`)).buffer(), thumbnailUrl: await (await fetch(`https://telegra.ph/file/09e425d49f2b7ac83178e.jpg`)).buffer(), sourceUrl: 'https://whatsapp.com/channel/0029VaBpO8M3rZZdwkGFIP33', mediaType: 1 }}}, { quoted: m }
 }
 
 let file = global.__filename(import.meta.url, true)
