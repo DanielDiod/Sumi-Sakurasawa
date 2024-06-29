@@ -11,10 +11,10 @@ if (!result || !result.length) return conn.reply(m.chat, `No se encontraron resu
 let txt = '`- T W I T T E R  -  S E A R C H`'
     result.forEach(({ user, post, profile, user_link }, index) => {
     txt += `\n\n`
-    txt += `  *📋 Nro* : ${index + 1}\n`
-    txt += `  *🪪 User* : ${user}\n`
-    txt += `  *📰 Publicacion* : ${post}\n`
-    txt += `  *📖 Perfil* : ${profile}\n`
+    txt += `  *💌 Nro* : ${index + 1}\n`
+    txt += `  *👥 User* : ${user}\n`
+    txt += `  *🗓️ Publicacion* : ${post}\n`
+    txt += `  *🪪 Perfil* : ${profile}\n`
     txt += `  *🏷️ Link* : ${user_link}`
     })
 await conn.reply(m.chat, txt, m, rcanal)
