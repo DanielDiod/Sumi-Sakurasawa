@@ -24,7 +24,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
     try {
         let push = [];
-        let { data } = await axios.get(`https://apis-starlights-team.koyeb.app/starlight/tiktoksearch?text=$${text}`)
+        let { data } = await axios.get(`https://apis-starlights-team.koyeb.app/starlight/tiktoksearch?text=${text}`)
         let res = data.data
         shuffleArray(res)
         let ult = res.splice(0, 7)
