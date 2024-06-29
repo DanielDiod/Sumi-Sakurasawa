@@ -2,7 +2,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
 if (!text) return conn.reply(m.chat, '🧃 Ingrese el texto del post que deseas buscar.', m, rcanal)
-await m.react('🕓')
+await m.react('⌛')
 try {
 let json = await axios.get(`https://apis-starlights-team.koyeb.app/starlight/Twitter-Posts?text=${text}`, { headers: { 'Content-Type': 'application/json' }})
 let result = json.data.result
