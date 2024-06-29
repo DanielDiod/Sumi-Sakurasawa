@@ -29,7 +29,7 @@ const texto1 = `乂  Y O U T U B E   M U S I C\n
 await conn.sendButton2(m.chat, texto1, botname, res.videos[0].thumbnail, [
 	['Audio 📀', `${usedPrefix}mp3 ${text}`],
 	['Video 🎥', `${usedPrefix}mp4 ${text}`]
-  ], null, [['Canal', `${md}`]], m)
+  ], null, [['Canal', `${canal}`]], m)
 	  }
   
             if (command == "mp3") {
