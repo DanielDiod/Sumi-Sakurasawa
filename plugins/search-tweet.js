@@ -8,7 +8,7 @@ let json = await axios.get(`https://apis-starlights-team.koyeb.app/starlight/Twi
 let result = json.data.result
 if (!result || !result.length) return conn.reply(m.chat, `No se encontraron resultados.`, m, rcanal)
         
-let txt = '`🎄 T W I T T E R  -  S E A R C H`'
+let txt = '`- T W I T T E R  -  S E A R C H`'
     result.forEach(({ user, post, profile, user_link }, index) => {
     txt += `\n\n`
     txt += `  *📋 Nro* : ${index + 1}\n`
