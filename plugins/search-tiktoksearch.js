@@ -35,7 +35,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
                     text: null
                 }),
                 footer: proto.Message.InteractiveMessage.Footer.fromObject({
-                    text: "© Starlights Team"
+                    text: botname
                 }),
                 header: proto.Message.InteractiveMessage.Header.fromObject({
                     title: `${result.title}`,
