@@ -18,7 +18,7 @@ let img = catalogo
 					mediaUrl: null,
 					description: null,
 					previewType: "PHOTO",
-					thumbnai: catalogo,
+					thumbnai: miniurl,
 		           sourceUrl: canal,
 		           mediaType: 1,
                    renderLargerThumbnail: false
