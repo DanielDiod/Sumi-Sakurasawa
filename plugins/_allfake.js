@@ -9,7 +9,7 @@ let img = catalogo
 	    externalAdReply: {
 				    showAdAttribution: true,
 					title: botname,
-					body: textbot,
+					body: 'Hola',
 					mediaUrl: null,
 					description: null,
 					previewType: "PHOTO",
