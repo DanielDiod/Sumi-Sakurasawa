@@ -1,15 +1,15 @@
-import Scraper from '@SumiFX/Scraper'
+import Starlights from '@StarlightsTeam/Scraper'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return m.reply('🍭 Ingresa una petición que deseas que Sumi realice.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* hola, cómo te llamas?`)
-
+if (!text) return conn.reply(m.chat, `*🍭 Ingrese su petición*\n*🪼 Ejemplo de uso:*> ${usedPrefix + command} como hacer estrella de papel`, m, rcanal)
+await m.react('📖')
 try {
-let { msg } = await Scraper.openAi(text)
-await conn.reply(m.chat, msg, m)
+let { msg } = await Starlights.openAi(text)
+await conn.reply(m.chat, msg, m, rcanal)
 } catch {
 }}
-handler.help = ['sumi <petición>']
+handler.help = ['ai *<petición>*']
 handler.tags = ['tools']
-handler.command = ['sumi', 'ai', 'ia', 'chatgpt', 'gpt']
+handler.command = /^(sumi|ai|ia|chatgpt|gpt)$/i
 handler.register = true
 export default handler
