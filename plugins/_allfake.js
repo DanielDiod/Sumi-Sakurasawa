@@ -6,6 +6,19 @@ let img = catalogo
  global.rcanal = {
     contextInfo: {
     	isForwarded: true,
+	    externalAdReply: {
+				    showAdAttribution: true,
+					title: botname,
+					body: textbot,
+					mediaUrl: null,
+					description: null,
+					previewType: "PHOTO",
+					thumbnailUrl: img,
+                    thumbnail: img,
+		           sourceUrl: canal,
+		           mediaType: 1,
+                   renderLargerThumbnail: true
+	    },
     forwardedNewsletterMessageInfo: {
       newsletterJid: "120363206717994793@newsletter",
       serverMessageId: 100,
