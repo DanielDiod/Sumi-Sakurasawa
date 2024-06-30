@@ -18,10 +18,10 @@ let img = catalogo
 					mediaUrl: null,
 					description: null,
 					previewType: "PHOTO",
-					thumbnai: img,
+					thumbnai: catalogo,
 		           sourceUrl: canal,
 		           mediaType: 1,
-                   renderLargerThumbnail: true
+                   renderLargerThumbnail: false
 	    },
     },
   }
