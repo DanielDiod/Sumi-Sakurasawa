@@ -5,7 +5,7 @@ if (!text) return conn.reply(m.chat, `*🍭 Ingrese su petición*\n*🪼 Ejemplo
 await m.react('📖')
 try {
 let { msg } = await Starlights.openAi(text)
-await conn.reply(m.chat, msg, m, rcanal)
+await conn.reply(m.chat, msg, m)
 } catch {
 }}
 handler.help = ['ai *<petición>*']
