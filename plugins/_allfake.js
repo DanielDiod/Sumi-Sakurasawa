@@ -6,6 +6,11 @@ let img = catalogo
  global.rcanal = {
     contextInfo: {
     	isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: "120363206717994793@newsletter",
+      serverMessageId: 100,
+      newsletterName: 'Sumi - Sakursawa Channel 🎌',
+    },
 	    externalAdReply: {
 				    showAdAttribution: true,
 					title: botname,
@@ -13,17 +18,11 @@ let img = catalogo
 					mediaUrl: null,
 					description: null,
 					previewType: "PHOTO",
-					thumbnailUrl: img,
-                    thumbnail: img,
+					thumbnai: img,
 		           sourceUrl: canal,
 		           mediaType: 1,
                    renderLargerThumbnail: true
 	    },
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363206717994793@newsletter",
-      serverMessageId: 100,
-      newsletterName: 'Sumi - Sakursawa Channel 🎌',
-    },
     },
   }
 
