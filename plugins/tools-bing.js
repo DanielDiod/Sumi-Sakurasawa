@@ -5,7 +5,7 @@ import {Configuration, OpenAIApi} from 'openai';
 const configuration = new Configuration({organization: global.openai_org_id, apiKey: global.openai_key});
 const openaiii = new OpenAIApi(configuration);
 const handler = async (m, {conn, text, usedPrefix, command}) => {
-if (usedPrefix == 'a' || usedPrefix == 'A') return;
+//if (usedPrefix == 'a' || usedPrefix == 'A') return;
 if (!text) return m.reply(`🍭 Ingresé el texto lo que desea averiguar con bing`) 
 try {
 conn.sendPresenceUpdate('composing', m.chat);
