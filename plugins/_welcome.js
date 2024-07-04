@@ -10,16 +10,16 @@ export async function before(m, {conn, participants, groupMetadata}) {
 
   if (chat.welcome && m.messageStubType == 27) {
     let welcome = `┌─★ *Sumi Sakurasawa - MD* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
-  await conn.SenAi(m.chat, botname, welcome, img, img, canal, fake)
+  await conn.sendAi(m.chat, botname, welcome, img, img, canal, fake)
   }
   
   if (chat.welcome && m.messageStubType == 28) {
     let bye = `┌─★ *Sumi Sakurasawa - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-  await conn.SenAi(m.chat, botname, bye, img, img, canal, fake)
+  await conn.sendAi(m.chat, botname, bye, img, img, canal, fake)
   }
   
   if (chat.welcome && m.messageStubType == 32) {
     let kick = `┌─★ *Sumi Sakurasawa - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-  await conn.SenAi(m.chat, botname, kick, img, img, canal, fake)
+  await conn.sendAi(m.chat, botname, kick, img, img, canal, fake)
   }
 }
