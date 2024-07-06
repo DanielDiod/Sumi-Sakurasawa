@@ -7,6 +7,7 @@ const readMore = more.repeat(4001)
 let txt = `*Hola!, te invito a unirte a los grupos oficiales de la Bot para convivir con la comunidad :D*
 
 > 🍭 Enlace Grupo Ofc Sumi Sakursawa
+
 *🎌* ${group}
 
 *꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
