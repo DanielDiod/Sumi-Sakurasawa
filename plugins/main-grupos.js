@@ -9,7 +9,7 @@ let txt = `*Hola!, te invito a unirte a los grupos oficiales de la Bot para conv
 > 🍭 Enlace Grupo Ofc Sumi Sakursawa
 *🎌* ${group}
 
-*─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ*
+*꒷꒦꒷꒷꒦꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒷꒦꒷꒷꒦꒷꒷꒦꒷꒦꒷꒦꒷꒦꒷*
 
 > 📫 Enlace anulado? entre aquí! 
 
