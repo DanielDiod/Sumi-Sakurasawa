@@ -17,7 +17,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
    
   }
 };
-handler.command = ['mercadolibre'];
+handler.help = ['mercadolibre <búsqueda>']
+handler.tags = ['search']
+handler.command = ['mercadolibre']
+//handler.limit = 1
+handler.register = true
 export default handler;
 
 async function mercado(query) {
