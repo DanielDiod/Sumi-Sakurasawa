@@ -3,23 +3,22 @@ import fetch from 'node-fetch'
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => './src/https://tinyurl.com/2bdkh6w5')
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://tinyurl.com/ylgu47w3')
   let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
-  let fake = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "50499698072-1625305606@g.us" } : {}) }, message: { "audioMessage": { "mimetype":"audio/ogg; codecs=opus", "seconds": "99569", "ptt": "true"   }}}
 
-  if (chat.welcome && m.messageStubType == 27) {
-    let welcome = `┌─★ *Sumi Sakurasawa - MD* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
-  await conn.sendAi(m.chat, botname, welcome, img, img, canal, fake)
+  if (chat.bienvenida && m.messageStubType == 27) {
+    let bienvenida = `┌─★ *${botname}* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
+    
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, fake)
   }
   
-  if (chat.welcome && m.messageStubType == 28) {
-    let bye = `┌─★ *Sumi Sakurasawa - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-  await conn.sendAi(m.chat, botname, bye, img, img, canal, fake)
+  if (chat.bienvenida && m.messageStubType == 28) {
+    let bye = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, fake)
   }
   
-  if (chat.welcome && m.messageStubType == 32) {
-    let kick = `┌─★ *Sumi Sakurasawa - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
-  await conn.sendAi(m.chat, botname, kick, img, img, canal, fake)
-  }
-}
+  if (chat.bienvenida && m.messageStubType == 32) {
+    let kick = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal, fake)
+}}
