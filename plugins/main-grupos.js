@@ -6,8 +6,8 @@ const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 let txt = `*Hola!, te invito a unirte a los grupos oficiales de la Bot para convivir con la comunidad :D*
 
-1- > 🍭 Enlace Grupo Ofc Sumi Sakursawa 
-*✰* ${group}
+> 🍭 Enlace Grupo Ofc Sumi Sakursawa
+*🎌* ${group}
 
 *─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ*
 
