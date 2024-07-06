@@ -11,7 +11,7 @@ let txt = `*Hola!, te invito a unirte a los grupos oficiales de la Bot para conv
 
 *─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ*
 
-📫 Enlace anulado? entre aquí! 
+> 📫 Enlace anulado? entre aquí! 
 
 Canal :
 *🏷️* ${canal}
