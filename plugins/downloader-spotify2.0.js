@@ -108,5 +108,5 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 };
 
-handler.command = /^(spotifyfinal|music2.0)$/i;
+handler.command = /^(musica|audio)$/i;
 export default handler;
