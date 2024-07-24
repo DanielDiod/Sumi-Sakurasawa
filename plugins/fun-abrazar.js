@@ -5,7 +5,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
  let who
 if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
 else who = m.chat
-if (!who) throw `*[❗] Por favor, menciona el usuario*`
+if (!who) throw `🍭 Por favor, menciona el usuario`
   if (usedPrefix == 'a' || usedPrefix == 'A') return;
     
  let pp = "https://telegra.ph/file/4d80ab3a945a8446f0b15.mp4"
@@ -22,7 +22,7 @@ let pp6 = "https://telegra.ph/file/33332f613e1ed024be870.mp4"
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 
-        *${taguser} Esta abrazando a @${who.split`@`[0]} 🫂*
+        *${taguser} le esta dando un fuerte abrazo a @${who.split`@`[0]} 🫂*
  
   
     `.trim();
