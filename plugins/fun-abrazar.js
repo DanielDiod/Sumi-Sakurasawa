@@ -22,7 +22,7 @@ let pp6 = "https://telegra.ph/file/33332f613e1ed024be870.mp4"
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 
-        _${taguser} HA ABRAZADO A @${who.split`@`[0]} 🫂 🤗_
+        *${taguser} Esta abrazando a @${who.split`@`[0]} 🫂*
  
   
     `.trim();
